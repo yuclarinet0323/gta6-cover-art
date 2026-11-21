@@ -1,0 +1,53 @@
+/* Neon Shores — Cover Studio editor styling. Dark, neon-trimmed, offline. */
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: radial-gradient(1200px 700px at 80% -10%, #3b1163 0%, #14082b 55%, #0a0418 100%);
+  color: #f4efff;
+  font: 15px/1.45 system-ui, -apple-system, sans-serif;
+}
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; }
+.controls { display: flex; flex-direction: column; gap: 14px; width: 320px; flex: none; }
+.controls h1 {
+  margin: 0; font-size: 30px; letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffb347, #ff5e8a, #2ee6ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tagline { margin: 0; color: #bdb2dd; }
+.hint { margin: 0 0 6px; color: #bdb2dd; font-size: 13px; }
+fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px;
+  padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 9px; margin: 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+legend { font-weight: 800; padding: 0 6px; color: #ffd9ec; }
+label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13.5px; }
+label.check { flex-direction: row; align-items: center; gap: 8px; }
+input[type="text"], select {
+  font: inherit; padding: 8px; border: 1px solid #6f5fa8; border-radius: 6px;
+  background: #1d1138; color: #fff; width: 100%;
+}
+input[type="file"] { font: inherit; font-size: 13px; color: #d9d2f5; }
+input[type="range"] { width: 100%; accent-color: #ff5e8a; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+button {
+  font: inherit; font-weight: 700; padding: 9px 10px; border: 1px solid #6f5fa8;
+  border-radius: 7px; background: #241547; color: #f4efff; cursor: pointer; flex: 1;
+}
+button:hover { background: #31205f; }
+button.active { background: #ff5e8a; border-color: #ff5e8a; color: #fff; }
+button.export {
+  background: linear-gradient(90deg, #ff7a45, #ff2e88); border: 0; color: #fff;
+  font-size: 16px; padding: 12px;
+}
+#status { margin: 0; min-height: 1.2em; color: #9be7ff; font-size: 13.5px; }
+.stage { flex: 1; display: flex; justify-content: center; min-width: 0; }
+canvas {
+  max-height: calc(100vh - 48px); max-width: 100%; width: auto; height: auto;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55); background: #1a0b33;
+}
+/* Screenshot mode: the cover alone fills the viewport. */
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover .stage { width: 100vw; height: 100vh; }
+body.shot-cover canvas { width: 100vw; height: 100vh; max-height: none; box-shadow: none; }

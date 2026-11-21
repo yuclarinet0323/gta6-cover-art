@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Shores — Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Neon Shores</h1>
+    <p class="tagline">Cover Studio — turn your photos into a multi-panel poster cover.</p>
+
+    <fieldset>
+      <legend>1 · Photos (up to 4)</legend>
+      <label>Photo A <input type="file" data-photo accept="image/*"></label>
+      <label>Photo B <input type="file" data-photo accept="image/*"></label>
+      <label>Photo C <input type="file" data-photo accept="image/*"></label>
+      <label>Photo D <input type="file" data-photo accept="image/*"></label>
+      <div class="row">
+        <button type="button" data-sample="pier">Use pier sample</button>
+        <button type="button" data-sample="boulevard">Use boulevard sample</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 · Panel</legend>
+      <p class="hint">Click a panel on the cover to select it.</p>
+      <label><span id="panel-label">Panel 1</span> shows
+        <select id="assign"></select>
+      </label>
+      <label>Zoom <input id="zoom" type="range" min="1" max="2.5" step="0.01" value="1"></label>
+      <label>Pan X <input id="panx" type="range" min="-1" max="1" step="0.01" value="0"></label>
+      <label>Pan Y <input id="pany" type="range" min="-1" max="1" step="0.01" value="0"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 · Words &amp; look</legend>
+      <label>Title <input id="title" type="text" maxlength="26" value="NEON SHORES"></label>
+      <label>Caption <input id="caption" type="text" maxlength="40" value="Vice Coast Stories"></label>
+      <label>Theme
+        <select id="theme">
+          <option value="sunset" selected>Sunset</option>
+          <option value="neon">Neon Night</option>
+          <option value="ocean">Ocean Day</option>
+        </select>
+      </label>
+      <label class="check">Poster art (sun, palms, skyline)
+        <input id="decor" type="checkbox" checked>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4 · Size &amp; export</legend>
+      <div class="row">
+        <button type="button" data-size="square">1080 × 1080</button>
+        <button type="button" data-size="portrait" class="active">1080 × 1350</button>
+        <button type="button" data-size="wide">1920 × 1080</button>
+      </div>
+      <button id="export" type="button" class="export">Export PNG</button>
+      <p id="status" role="status"></p>
+    </fieldset>
+  </section>
+  <section class="stage">
+    <canvas id="cover" width="1080" height="1350" aria-label="Your Neon Shores cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
